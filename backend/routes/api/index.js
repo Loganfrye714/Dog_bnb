@@ -4,9 +4,9 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const asyncHandler = require('express-async-handler');
 
-// router.post('/test', function(req, res) {
-//   res.json({ requestBody: req.body });
-// });
+router.post('/test', function(req, res) {
+  res.json({ requestBody: req.body });
+});
 
 router.use('/session', sessionRouter);
 
