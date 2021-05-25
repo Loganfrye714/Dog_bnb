@@ -31,8 +31,14 @@ function Navigation({ isLoaded }){
         <img class="logo" src='https://thumbs.dreamstime.com/b/cartoon-dog-running-bone-13073342.jpg' alt="logo"></img>
         <nav >
           <ul class="navLinks">
-            <li>Dog Airbnb</li>
+            <li>Airbnb for dogs</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
             <li><NavLink exact to="/">Home</NavLink></li>
+            <li><NavLink exact to="/dogHouses">Dog Houses</NavLink></li>
             <li> {isLoaded && sessionLinks}</li>
           </ul>
         </nav>

@@ -19,6 +19,7 @@ const DogHouseContainer = () => {
           <li>
           <img src={dogHouse.imgUrl} key={dogHouse.id}/>
           </li>
+        <button>book a reservation</button>
         </ul>
       ))}
      </div>

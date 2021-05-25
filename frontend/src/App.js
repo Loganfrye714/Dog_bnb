@@ -27,7 +27,7 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route>
+          <Route path='/dogHouses'>
             <DogHouses />
           </Route>
         </Switch>

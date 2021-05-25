@@ -4,6 +4,8 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const asyncHandler = require('express-async-handler');
 const dogHousesRouter = require('./dogHouses')
+const reservationRouter = require('./reservations')
+
 
 router.post('/test', function(req, res) {
   res.json({ requestBody: req.body });
@@ -15,7 +17,7 @@ router.use('/users', usersRouter);
 
 router.use('/dogHouses', dogHousesRouter);
 
-
+router.use('/reservations', reservationRouter);
 
 
 
