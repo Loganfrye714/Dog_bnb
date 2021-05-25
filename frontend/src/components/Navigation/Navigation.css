@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #A45922;
+}
+
+.logo {
+  width: 85px;
+  height:auto;
+  border-left: 30px;
+}
+
+li {
+  font-family: "Pattaya";
+  font-weight: 500;
+  font-size: 24px;
+  color: black;
+  font: arial;
+
+}
+
+.navBar{
+  background-color:  white;
+  border-width: 2px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 10%
+}
+
+.navLinks {
+  list-style:none;
+}
+
+.navLinks li {
+  display: inline-block;
+  padding: 10px 10px;
+  align-items: center;
+}
+
+.navLinks li a:hover {
+  color: gray;
+}
