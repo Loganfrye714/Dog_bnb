@@ -22,9 +22,9 @@ const ReservationsList = () => {
           <li>{reservation.endDate}</li>
           <li>{reservation.price} per night</li>
           <li>{reservation.totalCost}</li>
-          <NavLink to="/reservationForm">
+          <NavLink to="/UpdateReservation">
            <button>
-             edit reservation
+             Update reservation
            </button>
           </NavLink>
         </ul>

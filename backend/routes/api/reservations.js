@@ -42,7 +42,9 @@ router.put(
   asyncHandler(async (req, res) => {
     const { userId, dogHouseId, startDate, endDate, price, totalCost  } = req.body;
 
-      const BookedRes = await Reservation.findByPk(4)
+    const reservationId = req.params.id;
+
+      const BookedRes = await Reservation.findByPk(reservationId)
       const updatedReservation = await BookedRes.update({
         userId,
         dogHouseId,

@@ -8,6 +8,7 @@ import Navigation from './components/Navigation'
 import DogHouses from './components/DogHouses/index'
 import Reservations from './components/Reservations/index'
 import ReservationForm from './components/Reservations/reservationForm'
+import ChangeReservation from './components/Reservations/updateReservation'
 import * as sessionActions from "./store/session";
 
 
@@ -37,6 +38,12 @@ function App() {
           </Route>
           <Route path='/reservations'>
             <Reservations />
+          </Route>
+          <Route path='/reservations'>
+            <Reservations />
+            </Route>
+          <Route path='/UpdateReservation'>
+            <ChangeReservation/>
           </Route>
         </Switch>
       )}

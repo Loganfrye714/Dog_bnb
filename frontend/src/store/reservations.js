@@ -17,9 +17,9 @@ const setSingleReservation = (reservation) => ({
   reservation
 })
 
-const updateReservation = (reservations) => ({
+const updateReservation = (reservation) => ({
   type: UPDATE_RESERVATION,
-  reservations,
+  reservation,
 })
 
 // Define Thunks
@@ -50,7 +50,7 @@ export const changeReservation = (reservation) => async (dispatch) => {
 
   const { userId, dogHouseId, startDate, endDate, price, totalCost } = reservation;
   const res = await csrfFetch('/api/reservations', {
-    method: "put",
+    method: "PUT",
     body: JSON.stringify({
       userId,
       dogHouseId,
@@ -61,7 +61,7 @@ export const changeReservation = (reservation) => async (dispatch) => {
     }),
   });
   const reservations = await res.json();
-  dispatch(setSingleReservation(reservations.reservation));
+  dispatch(updateReservation(reservations.reservation));
 };
 
 // Define an inital state
@@ -77,9 +77,13 @@ const reservationReducer = (state = initalState, action) => {
       })
       return newState;
     case (SET_SINGLE_RESERVATION): {
-      const newState = { ...state };
-      newState[action.reservation.id] = action.reservation
+        const newState = { ...state };
+        newState[action.reservation.id] = action.reservation
       return newState}
+    case (UPDATE_RESERVATION): {
+        const newState = { ...state };
+        newState[action.reservation.id] = action.reservation
+    return newState}
     default:
       return state;
   }
