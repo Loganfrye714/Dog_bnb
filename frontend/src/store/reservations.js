@@ -1,10 +1,24 @@
 // -> view reservation
 // Define Action Types as Constants
+import { csrfFetch } from './csrf';
 const SET_RESERVATION = 'reservation/SET_RESERVATION'
+const UPDATE_RESERVATION = 'reservation/UPDATE_RESERVATION'
+const SET_SINGLE_RESERVATION= 'reservation/SET_SINGLE_RESERVATION'
 
 // Define Action Creators
+
 const setReservation = (reservations) => ({
   type: SET_RESERVATION,
+  reservations,
+})
+
+const setSingleReservation = (reservation) => ({
+  type: SET_SINGLE_RESERVATION,
+  reservation
+})
+
+const updateReservation = (reservations) => ({
+  type: UPDATE_RESERVATION,
   reservations,
 })
 
@@ -14,6 +28,41 @@ export const getReservations = () => async (dispatch) => {
   const reservations = await res.json()
   dispatch(setReservation(reservations))
 }
+
+export const bookReservation = (reservation) => async (dispatch) => {
+  const { userId, dogHouseId, startDate, endDate, price, totalCost } = reservation;
+  const res = await csrfFetch('/api/reservations', {
+    method: "POST",
+    body: JSON.stringify({
+      userId,
+      dogHouseId,
+      startDate,
+      endDate,
+      price,
+      totalCost
+    }),
+  });
+  const reservations = await res.json();
+  dispatch(setSingleReservation(reservations.reservation));
+};
+
+export const changeReservation = (reservation) => async (dispatch) => {
+
+  const { userId, dogHouseId, startDate, endDate, price, totalCost } = reservation;
+  const res = await csrfFetch('/api/reservations', {
+    method: "put",
+    body: JSON.stringify({
+      userId,
+      dogHouseId,
+      startDate,
+      endDate,
+      price,
+      totalCost
+    }),
+  });
+  const reservations = await res.json();
+  dispatch(setSingleReservation(reservations.reservation));
+};
 
 // Define an inital state
 const initalState = {}
@@ -27,6 +76,10 @@ const reservationReducer = (state = initalState, action) => {
         newState[reservation.id] = reservation
       })
       return newState;
+    case (SET_SINGLE_RESERVATION): {
+      const newState = { ...state };
+      newState[action.reservation.id] = action.reservation
+      return newState}
     default:
       return state;
   }

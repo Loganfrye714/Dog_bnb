@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getReservations } from '../../store/reservations'
+import { NavLink } from 'react-router-dom';
 
 const ReservationsList = () => {
   // Declare variables from hooks
@@ -21,6 +22,11 @@ const ReservationsList = () => {
           <li>{reservation.endDate}</li>
           <li>{reservation.price} per night</li>
           <li>{reservation.totalCost}</li>
+          <NavLink to="/reservationForm">
+           <button>
+             edit reservation
+           </button>
+          </NavLink>
         </ul>
       ))}
      </div>

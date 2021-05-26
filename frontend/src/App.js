@@ -7,6 +7,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from './components/Navigation'
 import DogHouses from './components/DogHouses/index'
 import Reservations from './components/Reservations/index'
+import ReservationForm from './components/Reservations/reservationForm'
 import * as sessionActions from "./store/session";
 
 
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path='/dogHouses'>
             <DogHouses />
+          </Route>
+          <Route path='/reservationForm'>
+            <ReservationForm />
           </Route>
           <Route path='/reservations'>
             <Reservations />
