@@ -23,7 +23,6 @@ router.post(
   asyncHandler(async (req, res) => {
     const { dogHouseId, startDate, endDate, price, totalCost, userId } = req.body;
 
-
     const bookedReservation = await Reservation.build({
       userId,
       dogHouseId,

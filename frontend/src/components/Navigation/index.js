@@ -12,7 +12,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
+      <ul>
+      <li><NavLink exact to="/reservations">Reservations</NavLink></li>
       <ProfileButton user={sessionUser} />
+      </ul>
     );
   } else {
     sessionLinks = (
@@ -32,11 +35,7 @@ function Navigation({ isLoaded }){
         <nav >
           <ul class="navLinks">
             <li>Airbnb for dogs</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink exact to="/dogHouses">Dog Houses</NavLink></li>
             <li> {isLoaded && sessionLinks}</li>

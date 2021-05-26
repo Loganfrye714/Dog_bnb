@@ -6,6 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from './components/Navigation'
 import DogHouses from './components/DogHouses/index'
+import Reservations from './components/Reservations/index'
 import * as sessionActions from "./store/session";
 
 
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path='/dogHouses'>
             <DogHouses />
+          </Route>
+          <Route path='/reservations'>
+            <Reservations />
           </Route>
         </Switch>
       )}
