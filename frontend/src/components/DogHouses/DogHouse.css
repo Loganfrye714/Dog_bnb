@@ -13,5 +13,21 @@
 }
 
 .dogHouseCards {
-  margin: 10px;
+  display: flex;
+}
+
+.dogHouseImg{
+  width:425px;
+  height:375px;
+  padding-left: 20px;
+  padding-top: 30px;
+}
+
+.overview{
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  left: 100px;
+  top: 80px;
+  flex-wrap: wrap;
 }

@@ -8,7 +8,7 @@ const DogHouseContainer = () => {
   // Declare variables from hooks
   const dispatch = useDispatch();
   const dogHouses = useSelector((state) => Object.values(state.dogHouses));
-  console.log(dogHouses);
+
   useEffect(() => {
     dispatch(getDogHouses());
   }, [dispatch]);
@@ -20,15 +20,21 @@ const DogHouseContainer = () => {
           <ul>
             <div className="dogHouseCards">
               <li>
-                <img src={dogHouse.imgUrl} key={dogHouse.id} />
+                <img
+                  className="dogHouseImg"
+                  src={dogHouse.imgUrl}
+                  key={dogHouse.id}
+                />
               </li>
-              <NavLink to="/reservationForm">
-                <button className="buttonDiv2">reserve here</button>
-              </NavLink>
-              <li>Total dogs allowed - {dogHouse.totalDogsAllowed}</li>
-              <li>Total dog mats - {dogHouse.totalDogMats}</li>
-              <li>Total yard bathrooms - {dogHouse.totalYardBathrooms}</li>
-              <li>Summary - {dogHouse.summary}</li>
+              <ul className="overview">
+                <li>Total dogs allowed - {dogHouse.totalDogsAllowed}</li>
+                <li>Total dog mats - {dogHouse.totalDogMats}</li>
+                <li>Total yard bathrooms - {dogHouse.totalYardBathrooms}</li>
+                <li>Summary - {dogHouse.summary}</li>
+                <NavLink to="/reservationForm">
+                  <button className="buttonDiv2">reserve here</button>
+                </NavLink>
+              </ul>
             </div>
           </ul>
         ))}

@@ -21,19 +21,18 @@ li {
   font-size: 24px;
   color: black;
   font: arial;
-
 }
 
 .navBar{
   background-color:  white;
   border-width: 2px;
-  color: #A45922
+  color: #A45922;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  padding: 30px 10%
+  padding: 30px 10%;
 }
 
 .navLinks {

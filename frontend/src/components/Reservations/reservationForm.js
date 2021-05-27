@@ -19,7 +19,7 @@ const CreateReservation = () => {
     const reservation = {
       userId, dogHouseId, startDate, endDate, price, totalCost
     }
-    console.log(reservation);
+
     dispatch(bookReservation(reservation))
     history.push('/reservations')
   };
@@ -53,13 +53,13 @@ const CreateReservation = () => {
           </input>
         </div>
         <div>
-          <label value={price}>Price per night - $500</label>
+          <label value={price}>Price per night - ${price}</label>
         </div>
         <div>
-          <label value={totalCost}>Total Price </label>
+          <label value={totalCost}></label>
         </div>
         <div>
-          <label value={dogHouseId}>Dog House</label>
+          <label value={dogHouseId}></label>
         </div>
         <button>Submit</button>
       </form>

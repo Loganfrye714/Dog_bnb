@@ -6,7 +6,7 @@ const HomePageContainer = () => {
     <div>
       <div className="banner">
         <div>
-          <h1 className="title">Stretch your paws and live life differently</h1>
+          <h1 className="title">Stretch your paws and relax with us</h1>
         </div>
       </div>
       <div className="buttonDiv">

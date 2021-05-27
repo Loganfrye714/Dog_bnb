@@ -2,11 +2,15 @@
   background: url(https://cdn.homecrux.com/wp-content/uploads/2016/11/Handcrafted-doghouses-by-Pijuan-Design-Workshop.jpg);
   height: 40vh;
   position: relative;
+  background-size: 100%;
+  background-repeat:no-repeat;
+
 }
 
 .title{
   color: white;
   width: 50px;
+  font: arial;
 }
 
 .buttonReserve {
@@ -33,4 +37,6 @@
   background: url(https://image.freepik.com/free-vector/happy-family-walks-around-city-park-father-mother-son-daughter-together-outdoors-vector-illustration-cartoon-style_165429-121.jpg);
   height: 40vh;
   position: relative;
+  background-repeat:no-repeat;
+  background-size: 100%;
 }

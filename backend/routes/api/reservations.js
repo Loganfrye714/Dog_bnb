@@ -53,7 +53,6 @@ router.put(
         price,
         totalCost
       })
-      console.log(updatedReservation);
       return res.json(updatedReservation)
 
   }),

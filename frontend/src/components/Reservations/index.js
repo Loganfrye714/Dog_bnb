@@ -11,7 +11,6 @@ const ReservationsList = () => {
   useEffect(() => {
     dispatch(getReservations());
   }, [dispatch])
-  console.log(reservations);
 
   return (
     <div>
