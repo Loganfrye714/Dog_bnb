@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #A45922;
+  /* color: #A45922; */
 }
 
 .logo {
@@ -27,6 +27,7 @@ li {
 .navBar{
   background-color:  white;
   border-width: 2px;
+  color: #A45922
 }
 
 header {
@@ -43,6 +44,7 @@ header {
   display: inline-block;
   padding: 10px 10px;
   align-items: center;
+  text-decoration: none
 }
 
 .navLinks li a:hover {

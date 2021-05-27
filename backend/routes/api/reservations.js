@@ -38,11 +38,11 @@ router.get('/:id', asyncHandler( async(req,res) => {
 
 // -> update an reservation
 router.put(
-  '/',
+  '/:reservationId',
   asyncHandler(async (req, res) => {
     const { userId, dogHouseId, startDate, endDate, price, totalCost  } = req.body;
 
-    const reservationId = req.params.id;
+    const reservationId = req.params.reservationId;
 
       const BookedRes = await Reservation.findByPk(reservationId)
       const updatedReservation = await BookedRes.update({
@@ -53,7 +53,7 @@ router.put(
         price,
         totalCost
       })
-
+      console.log(updatedReservation);
       return res.json(updatedReservation)
 
   }),
@@ -61,9 +61,9 @@ router.put(
 
 // -> delete an reservation
 // -> find a reservation by a specific ID
-router.delete('/', asyncHandler( async(req,res) => {
-
-  const cancelledRes = await Reservation.findByPk(12);
+router.delete('/:reservationId', asyncHandler( async(req,res) => {
+  const reservationId = req.params.reservationId;
+  const cancelledRes = await Reservation.findByPk(req.params.reservationId);
   await cancelledRes.destroy();
   return res.json({});
 

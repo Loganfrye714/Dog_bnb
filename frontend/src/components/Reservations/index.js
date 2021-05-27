@@ -22,7 +22,7 @@ const ReservationsList = () => {
           <li>{reservation.endDate}</li>
           <li>{reservation.price} per night</li>
           <li>{reservation.totalCost}</li>
-          <NavLink to="/UpdateReservation">
+          <NavLink to={`/UpdateReservation/${reservation.id}`}>
            <button>
              Update reservation
            </button>

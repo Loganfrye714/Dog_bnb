@@ -35,7 +35,6 @@ function Navigation({ isLoaded }){
         <nav >
           <ul class="navLinks">
             <li>Airbnb for dogs</li>
-
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink exact to="/dogHouses">Dog Houses</NavLink></li>
             <li> {isLoaded && sessionLinks}</li>

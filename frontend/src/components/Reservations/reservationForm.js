@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Redirect, useParams } from "react-router-dom"
+import { Redirect, useParams, useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import { bookReservation } from '../../store/reservations'
 
@@ -12,6 +12,7 @@ const CreateReservation = () => {
   const [dogHouseId, setdogHouseNumber] = useState(4)
   const userId = useSelector((state) => state.session.user.id)
   const dispatch = useDispatch()
+  const history = useHistory()
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const CreateReservation = () => {
     }
     console.log(reservation);
     dispatch(bookReservation(reservation))
+    history.push('/reservations')
   };
 
   return (

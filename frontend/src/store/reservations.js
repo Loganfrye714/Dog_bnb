@@ -4,6 +4,7 @@ import { csrfFetch } from './csrf';
 const SET_RESERVATION = 'reservation/SET_RESERVATION'
 const UPDATE_RESERVATION = 'reservation/UPDATE_RESERVATION'
 const SET_SINGLE_RESERVATION= 'reservation/SET_SINGLE_RESERVATION'
+const REMOVE_SINGLE_RESERVATION= 'reservation/SET_SINGLE_RESERVATION'
 
 // Define Action Creators
 
@@ -22,7 +23,23 @@ const updateReservation = (reservation) => ({
   reservation,
 })
 
+const remove = (reservation) => ({
+  type: REMOVE_SINGLE_RESERVATION,
+  reservation,
+})
+
 // Define Thunks
+
+export const deleteReservation = (reservation) => async (dispatch) => {
+  const { reservationId } = reservation;
+  const res = await csrfFetch(`/api/reservations/${reservationId}`, {
+    method: "DELETE",
+  });
+
+  const cancelledRes = await res.json()
+  dispatch(remove(cancelledRes))
+};
+
 export const getReservations = () => async (dispatch) => {
   const res = await fetch('/api/reservations');
   const reservations = await res.json()
@@ -46,10 +63,11 @@ export const bookReservation = (reservation) => async (dispatch) => {
   dispatch(setSingleReservation(reservations.reservation));
 };
 
+
 export const changeReservation = (reservation) => async (dispatch) => {
 
-  const { userId, dogHouseId, startDate, endDate, price, totalCost } = reservation;
-  const res = await csrfFetch('/api/reservations', {
+  const { reservationId, userId, dogHouseId, startDate, endDate, price, totalCost } = reservation;
+  const res = await csrfFetch(`/api/reservations/${reservationId}`, {
     method: "PUT",
     body: JSON.stringify({
       userId,
@@ -61,7 +79,7 @@ export const changeReservation = (reservation) => async (dispatch) => {
     }),
   });
   const reservations = await res.json();
-  dispatch(updateReservation(reservations.reservation));
+  dispatch(updateReservation(reservations));
 };
 
 // Define an inital state
@@ -84,6 +102,10 @@ const reservationReducer = (state = initalState, action) => {
         const newState = { ...state };
         newState[action.reservation.id] = action.reservation
     return newState}
+    case (REMOVE_SINGLE_RESERVATION): {
+      const newState = { ...state };
+      delete newState[action.reservation.id]
+  return newState}
     default:
       return state;
   }

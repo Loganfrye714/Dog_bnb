@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Redirect, useParams } from "react-router-dom"
+import { Redirect, useParams, useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
-import { changeReservation } from '../../store/reservations'
+import { changeReservation, deleteReservation } from '../../store/reservations'
 
 const UpdateReservation = () => {
 
@@ -12,13 +12,25 @@ const UpdateReservation = () => {
   const [dogHouseId, setdogHouseNumber] = useState(4)
   const userId = useSelector((state) => state.session.user.id)
   const dispatch = useDispatch()
+  const history = useHistory()
+  const { reservationId } = useParams()
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const reservation = {
-      userId, dogHouseId, startDate, endDate, price, totalCost
+      reservationId, userId, dogHouseId, startDate, endDate, price, totalCost
     }
-    dispatch(changeReservation(reservation))
+    await dispatch(changeReservation(reservation))
+    history.push('/reservations')
+  };
+
+  const onClick = async (e) => {
+    e.preventDefault();
+    const reservation = {
+      reservationId
+    }
+    await dispatch(deleteReservation(reservation))
+    history.push('/')
   };
 
   return (
@@ -60,6 +72,7 @@ const UpdateReservation = () => {
         </div>
         <button>Submit</button>
       </form>
+      <button onClick={onClick}>Delete Reservation</button>
     </div>
   )
 
