@@ -1,13 +1,14 @@
 .buttonDiv2 {
   background-color: #E29E3A;
   font-style: bold;
+  margin: 30px;
   color: white;
   border: none;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 4px 2px;
+  margin: 40px 2px;
   cursor: pointer;
   border-radius: 16px;
 }

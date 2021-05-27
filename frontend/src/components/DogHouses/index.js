@@ -31,7 +31,7 @@ const DogHouseContainer = () => {
                 <li>Total dog mats - {dogHouse.totalDogMats}</li>
                 <li>Total yard bathrooms - {dogHouse.totalYardBathrooms}</li>
                 <li>Location - {dogHouse.location}</li>
-                <li>Summary - {dogHouse.summary}</li>
+                <li>{dogHouse.summary}</li>
                 <NavLink to="/reservationForm">
                   <button className="buttonDiv2">reserve here</button>
                 </NavLink>
