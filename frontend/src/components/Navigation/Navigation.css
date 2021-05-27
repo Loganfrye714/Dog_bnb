@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
 
 * {
   box-sizing: border-box;
@@ -16,15 +18,15 @@
 }
 
 li {
-  font-family: "Pattaya";
   font-weight: 500;
   font-size: 24px;
   color: black;
-  font: arial;
+  font: Open;
 }
 
 .navBar{
   background-color:  white;
+  font-family: "Pattaya";
   border-width: 2px;
   color: #A45922;
 }
