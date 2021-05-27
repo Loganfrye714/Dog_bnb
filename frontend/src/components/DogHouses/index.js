@@ -31,9 +31,10 @@ const DogHouseContainer = () => {
                 <li>Total dog mats - {dogHouse.totalDogMats}</li>
                 <li>Total yard bathrooms - {dogHouse.totalYardBathrooms}</li>
                 <li>Location - {dogHouse.location}</li>
+                <li>Price - {dogHouse.price}</li>
                 <li>{dogHouse.summary}</li>
                 <NavLink to="/reservationForm">
-                  <button className="buttonDiv2">reserve here</button>
+                  <button className="buttonDiv2">Reserve here</button>
                 </NavLink>
               </ul>
             </div>

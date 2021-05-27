@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Redirect, useParams, useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import { bookReservation } from '../../store/reservations'
+import "./reservations.css";
 
 const CreateReservation = () => {
 
@@ -25,11 +26,11 @@ const CreateReservation = () => {
   };
 
   return (
-    <div>
+    <div className="reservationsContainer">
+      <form className="form" onSubmit={onSubmit}>
       <div className="header">
           <h2>Reserve your stay today</h2>
       </div>
-      <form className="form" onSubmit={onSubmit}>
         <div>
           <label>Start Date</label>
           <input
@@ -53,7 +54,7 @@ const CreateReservation = () => {
           </input>
         </div>
         <div>
-          <label value={price}>Price per night - ${price}</label>
+          <label value={price}></label>
         </div>
         <div>
           <label value={totalCost}></label>
@@ -61,7 +62,7 @@ const CreateReservation = () => {
         <div>
           <label value={dogHouseId}></label>
         </div>
-        <button>Submit</button>
+        <button className="submitButton">Submit</button>
       </form>
     </div>
   )

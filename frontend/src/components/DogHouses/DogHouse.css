@@ -24,6 +24,12 @@
   padding-top: 30px;
 }
 
+.buttonDiv2:hover{
+  color: white;
+  background-color: #A45922;
+}
+
+
 .overview{
   align-items: center;
   justify-content: flex-end;

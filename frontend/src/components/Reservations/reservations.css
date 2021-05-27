@@ -1,45 +1,54 @@
-.banner{
-  background: url(https://cdn.homecrux.com/wp-content/uploads/2016/11/Handcrafted-doghouses-by-Pijuan-Design-Workshop.jpg);
-  height: 40vh;
+
+
+
+
+.form {
+  align-items: center;
+  justify-content: flex-end;
   position: relative;
-  background-size: 100%;
-  background-repeat:no-repeat;
-
+  left: 345px;
+  top: 80px;
+  flex-wrap: wrap;
 }
 
-.title{
-  color: white;
-  width: 50px;
-  font: arial;
+.form div {
+  padding: 2px;
 }
 
-.buttonReserve {
+.submitButton {
   background-color: #E29E3A;
-  padding-top: 30px;
+  padding-top: 20px;
   font-style: bold;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 14px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 16px;
+  border-radius: 6px;
 }
 
-.buttonDiv {
-  display: flex;
-  padding: 20px;
-  justify-content: center;
-}
-
-.buttonReserve :hover{
+.submitButton:hover{
   color: white;
   background-color: #A45922;
 }
 
-.banner2{
+.rez {
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  left: 345px;
+  top: 80px;
+  flex-wrap: wrap;
+}
+
+.rez div {
+  padding: 2px;
+}
+
+.banner3{
   background: url(https://image.freepik.com/free-vector/happy-family-walks-around-city-park-father-mother-son-daughter-together-outdoors-vector-illustration-cartoon-style_165429-121.jpg);
   height: 40vh;
   position: relative;

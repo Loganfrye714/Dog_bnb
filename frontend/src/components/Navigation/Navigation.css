@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  /* color: #A45922; */
+  color: #A45922;
 }
 
 .logo {
@@ -19,7 +19,7 @@
 
 li {
   font-weight: 500;
-  font-size: 24px;
+  font-size: 22px;
   color: black;
   list-style-type:none;
   font: Open;
@@ -51,4 +51,9 @@ header {
 
 .navLinks li a:hover {
   color: gray;
+}
+
+.home {
+  text-decoration: none;
+  color: black;
 }

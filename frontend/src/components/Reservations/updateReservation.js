@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Redirect, useParams, useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux';
 import { changeReservation, deleteReservation } from '../../store/reservations'
+import "./reservations.css";
 
 const UpdateReservation = () => {
 
@@ -35,10 +36,10 @@ const UpdateReservation = () => {
 
   return (
     <div>
+      <form className="form" onSubmit={onSubmit}>
       <div className="header">
           <h2>Edit your reservation</h2>
       </div>
-      <form className="form" onSubmit={onSubmit}>
         <div>
           <label>Start Date</label>
           <input
@@ -62,17 +63,17 @@ const UpdateReservation = () => {
           </input>
         </div>
         <div>
-          <label value={price}>Price per night - $500</label>
+          <label value={price}></label>
         </div>
         <div>
-          <label value={totalCost}>Total Price </label>
+          <label value={totalCost}></label>
         </div>
         <div>
-          <label value={dogHouseId}>Dog House</label>
+          <label value={dogHouseId}></label>
         </div>
-        <button>Submit</button>
+        <button className="submitButton">Submit</button>
+        <button onClick={onClick} className="submitButton">Delete Reservation</button>
       </form>
-      <button onClick={onClick}>Delete Reservation</button>
     </div>
   )
 
